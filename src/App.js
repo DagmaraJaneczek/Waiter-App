@@ -3,6 +3,7 @@ import Header from "./components/views/Header/Header";
 import Footer from "./components/views/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
+import Table from "./components/pages/Table/Table";
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/table/:id" element={<Table />} />
         </Routes>
         <Footer />
       </Container>
