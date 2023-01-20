@@ -7,7 +7,10 @@ import Table from "./components/pages/Table/Table";
 import NotFound from "./components/views/NotFound/NotFound";
 
 
+
 const App = () => {
+
+
   return (
       <Container>
         <Header />

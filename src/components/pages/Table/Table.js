@@ -1,7 +1,8 @@
 import { Form, Row, Col, Stack, Button } from "react-bootstrap";
 
 const Table = () => {
-    return(
+
+  return(
         <div>
           <h1 className="my-2">Table</h1>
           <Form>

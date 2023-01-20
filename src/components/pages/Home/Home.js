@@ -2,7 +2,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { Stack, Button } from 'react-bootstrap';
 
 
+
 const Home = () => {
+
+
+
     return(
         <div>
           <h1 className='my-3'>All tables</h1>
@@ -11,7 +15,7 @@ const Home = () => {
               <Stack direction="horizontal" gap={3}>
                 <h3 >Table 1</h3>
                 <p className='mb-0'><strong>Status:</strong></p>
-                <Button variant='primary' className="ms-auto">Show more</Button>
+                <Button  variant='primary' className="ms-auto">Show more</Button>
               </Stack>
             </ListGroup.Item>
 
