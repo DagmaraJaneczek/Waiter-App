@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Row, Col, Stack, Button } from "react-bootstrap";
 
 const Table = () => {
 
   const options = ["Free", "Busy", "Reserved", "Cleaning"]
   const [title, setTitle] = useState(options[0]);
+
+  useEffect(() => {console.log('State:', title)}, [title]);
+
+  const handleClick = event => {
+    event.preventDefault()
+    setTitle()
+  }
 
 
   return(
@@ -41,7 +48,7 @@ const Table = () => {
                 </Col>
               </Stack>
             </Form.Group >
-            <Button variant="primary" type="submit">Update</Button>
+            <Button onClick={handleClick} variant="primary" type="submit">Update</Button>
           </Form>
         </div>
 
