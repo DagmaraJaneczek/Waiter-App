@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Row, Col, Stack, Button } from "react-bootstrap";
 
 const Table = () => {
 
-  const options = ["Free", "Busy", "Reserved", "Cleaning"]
-  const [title, setTitle] = useState(options[0]);
+  const options = ["Free", "Busy", "Reserved", "Cleaning"];
+  const [selected, setSelected] = useState(options[0]);
 
-  useEffect(() => {console.log('State:', title)}, [title]);
+ // useEffect(() => {console.log('State:', title)}, [title]);
 
-  const handleClick = event => {
-    event.preventDefault()
-    setTitle()
+  const submit =() => {
+    console.log(selected)
   }
 
 
@@ -21,8 +20,8 @@ const Table = () => {
             <Form.Group as={Row} className="my-3">
               <Form.Label column sm={2} lg={1}><strong>Status:</strong></Form.Label>
               <Col sm={6} lg={3}>
-                <Form.Select defaultValue={title} onChange={(e) => setTitle(e.target.value)} className="form-select" aria-label="Default select example">
-                  {options.map((option, idx) => (<option key={idx}>{option}</option>))}
+                <Form.Select value={selected} onChange={(e) => setSelected(e.target.value)} className="form-select" aria-label="Default select example">
+                  {options.map((value) => (<option value={value} key={value}>{value}</option>))}
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -48,7 +47,7 @@ const Table = () => {
                 </Col>
               </Stack>
             </Form.Group >
-            <Button onClick={handleClick} variant="primary" type="submit">Update</Button>
+            <Button onClick={submit} variant="primary" type="button">Update</Button>
           </Form>
         </div>
 

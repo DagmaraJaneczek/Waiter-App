@@ -29,7 +29,7 @@ const Home = () => {
             <Stack direction="horizontal" gap={3}>
                 <h3>Table 2</h3>
                 <p className='mb-0'><strong>Status:</strong></p>
-                <p className='mb-0'>Busy</p>
+                <p className='mb-0'></p>
                 <Button onClick={handleClick} variant='primary' className="ms-auto">Show more</Button>
               </Stack>
             </ListGroup.Item>
@@ -38,7 +38,7 @@ const Home = () => {
             <Stack direction="horizontal" gap={3}>
                 <h3>Table 3</h3>
                 <p className='mb-0'><strong>Status:</strong></p>
-                <p className='mb-0'>Busy</p>
+                <p className='mb-0'></p>
                 <Button onClick={handleClick} variant='primary' className="ms-auto">Show more</Button>
               </Stack>
             </ListGroup.Item>
@@ -47,7 +47,7 @@ const Home = () => {
             <Stack direction="horizontal" gap={3}>
                 <h3>Table 4</h3>
                 <p className='mb-0'><strong>Status:</strong></p>
-                <p className='mb-0'>Busy</p>
+                <p className='mb-0'></p>
                 <Button onClick={handleClick} variant='primary' className="ms-auto">Show more</Button>
               </Stack>
             </ListGroup.Item>
