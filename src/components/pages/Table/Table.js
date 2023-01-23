@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Row, Col, Stack, Button } from "react-bootstrap";
 
+
 const Table = () => {
 
   const options = ["Free", "Busy", "Reserved", "Cleaning"];
@@ -11,6 +12,7 @@ const Table = () => {
   const submit =() => {
     console.log(selected)
   }
+
 
 
   return(
@@ -47,7 +49,7 @@ const Table = () => {
                 </Col>
               </Stack>
             </Form.Group >
-            <Button onClick={submit} variant="primary" type="button">Update</Button>
+              <Button onClick={submit} variant="primary" type="button">Update</Button>
           </Form>
         </div>
 
