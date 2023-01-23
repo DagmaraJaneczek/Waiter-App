@@ -5,10 +5,17 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
 import Table from "./components/pages/Table/Table";
 import NotFound from "./components/views/NotFound/NotFound";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loadTables } from "./redux/tablesRedux";
 
 
 const App = () => {
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadTables());
+  });
 
   return (
       <Container>
