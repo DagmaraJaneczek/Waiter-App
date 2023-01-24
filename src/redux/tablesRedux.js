@@ -1,4 +1,4 @@
-
+import { API_URL } from "../config";
 
 //selectors
 export const getTableById = ({ tables }, tableId) => tables.find(tables => tables.id === tableId);
@@ -16,7 +16,7 @@ export const updateTable = payload => ({ type: UPDATE_TABLE, payload })
 // thunks
 export const loadTables = () => {
   return (dispatch) => {
-    fetch('http://localhost:3131/api/tables')
+    fetch(`${API_URL}/tables`)
       .then(res => res.json())
       .then(data => dispatch(updateTables(data)))
   };
@@ -24,14 +24,14 @@ export const loadTables = () => {
 
 export const updateTableRequest = (tableId, tableData) => {
   return (dispatch) => {
-    fetch(`http://localhost:3131/api/tables/${tableId}`, {
+    fetch(`${API_URL}/tables/${tableId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(tableData),
     })
-    .then(res => dispatch(updateTable({ ...tableData, id: tableId })));
+    .then(() => dispatch(updateTable({ ...tableData, id: tableId })));
   };
 };
 
