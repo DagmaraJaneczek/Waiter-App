@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, Row, Col, Stack, Button } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getTableById } from "../../../redux/tablesRedux";
 import { useDispatch } from "react-redux";
