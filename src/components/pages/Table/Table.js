@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, Row, Col, Stack, Button } from "react-bootstrap";
-import {  useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getTableById } from "../../../redux/tablesRedux";
 import { useDispatch } from "react-redux";
@@ -12,6 +12,7 @@ const Table = () => {
   const { id } = useParams();
   const table = useSelector(state => getTableById(state, id));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const options = ["Free", "Busy", "Reserved", "Cleaning"];
   const [status, setStatus] = useState(table?.status);
@@ -40,9 +41,13 @@ useEffect(() =>{
 }, [status, people, maxPeople]);
 
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     dispatch(updateTableRequest(id, { status, bill, peopleAmount: people, maxPeopleAmount: maxPeople }));
-  }
+    navigate("/");
+  };
+
+
 
 
   if (!table)
@@ -99,7 +104,7 @@ useEffect(() =>{
                 </Col>
               </Stack>
             </Form.Group >
-              <Button variant="primary" type="submit">Update</Button>
+              <Button  variant="primary" type="submit">Update</Button>
           </Form>
         </div>
 
