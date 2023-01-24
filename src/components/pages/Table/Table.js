@@ -21,16 +21,29 @@ const Table = () => {
 
   useEffect(() => {
     if (table) {
-      setStatus(table.status);
+      setStatus(table.status)
       setBill(table.bill);
       setPeople(table.peopleAmount);
       setMaxPeople(table.maxPeopleAmount);
     }
   }, [table]);
 
+useEffect(() =>{
+  if(status === 'Busy') {
+    setBill(0);
+  } else if(status === 'Cleaning' || status === 'Free'){
+    setPeople(0);
+  }
+  if(people > maxPeople) {
+    setPeople(setMaxPeople);
+  }
+}, [status, people, maxPeople]);
+
+
   const submit = () => {
     dispatch(updateTableRequest(id, { status, bill, peopleAmount: people, maxPeopleAmount: maxPeople }));
   }
+
 
   if (!table)
     return (<h2>Loading...</h2>)
@@ -55,7 +68,7 @@ const Table = () => {
                   type="number"
                   value={people}
                   onChange={(e) => setPeople(e.target.value)}
-                  min="1"
+                  min="0"
                   max={maxPeople}
                 />
               </Col>
@@ -65,7 +78,7 @@ const Table = () => {
                   type="number"
                   value={maxPeople}
                   onChange={(e) => setMaxPeople(e.target.value)}
-                  min="1"
+                  min="0"
                   max="10"
                 />
               </Col>

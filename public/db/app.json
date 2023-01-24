@@ -5,11 +5,11 @@
       "status": "Reserved",
       "peopleAmount": "2",
       "maxPeopleAmount": "4",
-      "bill": "20"
+      "bill": "30"
     },
     {
       "id": "2",
-      "status": "Free",
+      "status": "Reserved",
       "peopleAmount": "1",
       "maxPeopleAmount": "4",
       "bill": 0
